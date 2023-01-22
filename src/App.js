@@ -3,10 +3,17 @@ import "./App.css";
 import InputURL from "./InputURL";
 import Grid from "@mui/material/Grid";
 import LastPlaylist from "./LastPlaylist";
-import Video from "./Video";
-import Example from "./Example";
+// import Video from "./Video";
+// import Example from "./Example";
+import YTVideo from "./YTVideo";
+import { useState } from "react";
 
 function App() {
+  const [currentlyPlaying, setCurrentlyPlaying] = useState("2g811Eo7K8");
+  const _nextVideo = (e) => {
+    alert("next");
+    setCurrentlyPlaying("uVxwwbTbDyg");
+  };
   return (
     <>
       <Grid
@@ -24,7 +31,8 @@ function App() {
         {/* </Grid> */}
       </Grid>
       <Grid container justifyContent="center" alignItems="center">
-        <Example />
+        {/* <Example /> */}
+        <YTVideo videoID={currentlyPlaying} nextVideo={_nextVideo} />
       </Grid>
     </>
   );

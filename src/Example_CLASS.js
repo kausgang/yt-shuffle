@@ -20,6 +20,8 @@ class Example extends React.Component {
 
   _onReady(event) {
     // access to player in all event handlers via event.target
+
+    //developers.google.com/youtube/iframe_api_reference#Events
     // event.target.pauseVideo();
     event.target.playVideo();
   }
