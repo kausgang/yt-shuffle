@@ -8,7 +8,7 @@ import Input from "@mui/material/Input";
 import SendRoundedIcon from "@mui/icons-material/SendRounded";
 import Send from "./Send";
 
-function InputURL() {
+function InputURL(props) {
   return (
     // <TextField
     //   id="standard-basic"
@@ -26,12 +26,13 @@ function InputURL() {
 
     <FormControl fullWidth sx={{ m: 1 }} variant="standard">
       <TextField
-        id="standard-basic"
+        id="playlist"
         label="Youtube Playlist"
         variant="standard"
+        onChange={props.onPlaylistChange}
         InputProps={{
           //   endAdornment: <SendRoundedIcon fontSize="large" color="primary" />,
-          endAdornment: <Send />,
+          endAdornment: <Send onSend={props.onSend} />,
         }}
       />
     </FormControl>
